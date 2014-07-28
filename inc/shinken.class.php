@@ -106,6 +106,8 @@ class PluginMonitoringShinken extends CommonDBTM {
             $a_commands[$i]['name'] = $data['name'];
             $a_commands[$i]['command_name'] = $data['command_name'];
             $a_commands[$i]['command_line'] = $data['command_line'];
+			if ($data['module_type']!='')
+				$a_commands[$i]['module_type'] = $data['module_type'];
             $i++;
          }
          if ($data['command_name'] == "restart_shinken") {

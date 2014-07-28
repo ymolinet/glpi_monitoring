@@ -385,6 +385,16 @@ class PluginMonitoringCommand extends CommonDBTM {
       echo "</td>";
       echo "</tr>";
 
+	  echo "<tr class='tab_bg_1'>";
+	  echo "<td>".__('Module type', 'monitoring')."&nbsp;:</td>";
+      echo "<td>";
+      $arrayModuleTypeElements = array('' => '-----', 'nrpe_poller' => 'NRPE Booster for Shinken') ; 
+	  $arrayModuleTypeOptions = array('values' => array($this->fields["module_type"]));
+	  Dropdown::showFromArray('module_type', $arrayModuleTypeElements, $arrayModuleTypeOptions) ; 
+      echo "</td>";
+	  echo "<td colspan='2'></td>";
+	  echo "</tr>";
+	  
       echo "<tr class='tab_bg_1'>";
       echo "<td>".__('Arguments description', 'monitoring')."&nbsp;:</td>";
       echo "<td colspan='3'>";
